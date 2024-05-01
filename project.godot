@@ -15,6 +15,11 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
+GameNetworkHandler="*res://scripts/networking/GameNetworkHandler.gd"
+
 [display]
 
 window/size/viewport_width=640
