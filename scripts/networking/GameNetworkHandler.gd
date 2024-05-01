@@ -13,12 +13,9 @@ var nakama_session: NakamaSession
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	Nakama.pause_mode = Node.PAUSE_MODE_PROCESS
 	nakama_client = Nakama.create_client(nakama_server_key, nakama_host, nakama_port, nakama_scheme)
 	nakama_client.timeout = 20
 	
-
 func connect_to_server():
 	
 	nakama_socket = Nakama.create_socket_from(nakama_client)
@@ -32,3 +29,4 @@ func connect_to_server():
 		printerr("An error occurred: %s" % connected)
 		return
 	print("Socket Connected")
+	get_tree().change_scene_to_file("res://scenes/lobby.tscn")
