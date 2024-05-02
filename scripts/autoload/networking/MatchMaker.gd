@@ -20,7 +20,6 @@ func on_matchmaker_matched(p_matched: NakamaRTAPI.MatchmakerMatched):
 func on_match_presence(p_presence: NakamaRTAPI.MatchPresenceEvent):
 	print("Match Presence %s" % p_presence)
 	for p in p_presence.joins:
-		
 		players[p.session_id] = {p: p}
 		player_joined.emit(p)
 	for p in p_presence.leaves:
