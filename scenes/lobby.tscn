@@ -1,6 +1,21 @@
-[gd_scene format=3 uid="uid://ix1b3cfsiajc"]
+[gd_scene load_steps=2 format=3 uid="uid://de1jn5g1axbqa"]
+
+[sub_resource type="GDScript" id="GDScript_mtoif"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Lobby" type="Node2D"]
+script = SubResource("GDScript_mtoif")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -29,6 +44,7 @@ offset_bottom = 296.0
 text = "MAP 1"
 
 [node name="Map2" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 311.0
 offset_right = 70.0
@@ -36,6 +52,7 @@ offset_bottom = 342.0
 text = "MAP 2"
 
 [node name="SetTank" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 203.0
 offset_right = 71.0
@@ -44,6 +61,7 @@ text = "TANK
 "
 
 [node name="SetSupport" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = 81.0
 offset_top = 203.0
 offset_right = 138.0
@@ -52,6 +70,7 @@ text = "SUPPORT
 "
 
 [node name="SetDps" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
 offset_left = 180.0
 offset_top = 203.0
 offset_right = 237.0
@@ -66,3 +85,5 @@ offset_top = 168.0
 offset_right = 404.0
 offset_bottom = 197.0
 text = "Start Game  as <Type>"
+
+[connection signal="button_down" from="CanvasLayer/Control/Map1" to="." method="_on_map_1_button_down"]

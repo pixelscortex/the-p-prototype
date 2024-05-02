@@ -1,6 +1,7 @@
 extends Node
 
 func _on_login_button_down():
+	
 	var email = $EmailText.text.strip_edges()
 	var password = $PasswordText.text.strip_edges()
 	
@@ -10,6 +11,7 @@ func _on_login_button_down():
 		printerr("An error occurred: %s" % session)
 		return
 	print("Successfully authenticated: %s" % session)
+	
 	GameNetworkHandler.nakama_session = session
 	
 	GameNetworkHandler.connect_to_server()

@@ -18,7 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
-GameNetworkHandler="*res://scripts/networking/GameNetworkHandler.gd"
+GameNetworkHandler="*res://scripts/autoload/networking/GameNetworkHandler.gd"
+MatchMaker="*res://scripts/autoload/networking/MatchMaker.gd"
+
+[debug]
+
+multirun/number_of_windows=2
+multirun/add_custom_args=true
+multirun/window_args=["listen", "join"]
 
 [display]
 
@@ -29,6 +36,10 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="the_p_prototype"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/multirun/plugin.cfg")
 
 [input]
 
